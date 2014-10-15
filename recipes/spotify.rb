@@ -29,5 +29,6 @@ end
 
 execute "Install Spotify" do
   cwd "/Applications/Install Spotify.app/Contents/MacOS"
+  command "./\"Install Spotify\""
   not_if { File.exists?('/Applications/Spotify.app') }
 end
