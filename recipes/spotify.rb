@@ -26,3 +26,8 @@ execute "unzip-spotify" do
   command "unzip #{Chef::Config[:file_cache_path]}/SpotifyInstaller.zip -d /Applications"
   action :nothing
 end
+
+execute "Install Spotify" do
+  cwd "/Applications/Install Spotify.app/Contents/MacOS"
+  not_if { File.exists?('/Applications/Spotify.app') }
+end
